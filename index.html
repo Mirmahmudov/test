@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Do'kon</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>🛍️ Online Do'kon</h1>
+            <nav>
+                <button id="themeToggle" class="theme-btn">🌙</button>
+                <button id="cartBtn" class="cart-btn">
+                    Savat <span id="cartCount">0</span>
+                </button>
+                <button id="addProductBtn" class="add-product-btn">+ Mahsulot Qo'shish</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="products-section">
+            <h2>Mahsulotlar</h2>
+            <div id="productsGrid" class="products-grid">
+                <!-- Products will be dynamically added here -->
+            </div>
+        </div>
+    </main>
+
+    <!-- Add Product Modal -->
+    <div id="addProductModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Yangi Mahsulot Qo'shish</h2>
+            <form id="addProductForm">
+                <div class="form-group">
+                    <label for="productName">Mahsulot Nomi:</label>
+                    <input type="text" id="productName" required>
+                </div>
+                <div class="form-group">
+                    <label for="productPrice">Narxi:</label>
+                    <input type="number" id="productPrice" step="0.01" required>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Rasm URL:</label>
+                    <input type="url" id="productImage" required>
+                </div>
+                <div class="form-group">
+                    <label for="productDescription">Tavsif:</label>
+                    <textarea id="productDescription" rows="4" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Qo'shish</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Cart Modal -->
+    <div id="cartModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Savat</h2>
+            <div id="cartItems" class="cart-items">
+                <!-- Cart items will be dynamically added here -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total">
+                    <strong>Jami: <span id="cartTotal">0</span> so'm</strong>
+                </div>
+                <button id="clearCart" class="clear-btn">Savatni Tozalash</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
